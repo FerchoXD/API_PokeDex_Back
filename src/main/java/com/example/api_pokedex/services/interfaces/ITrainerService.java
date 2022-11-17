@@ -12,6 +12,8 @@ import java.util.List;
 public interface ITrainerService {
     GetTrainerResponse get(Long id);
 
+    BaseResponse Trainer(String nameTrainer);
+
     BaseResponse create(CreateTrainerRequest request);
 
     UpdateTrainerResponse update(UpdateTrainerRequest request, Long id);

@@ -6,12 +6,13 @@ import com.example.api_pokedex.controllers.dtos.response.BaseResponse;
 import com.example.api_pokedex.controllers.dtos.response.GetTrainerResponse;
 import com.example.api_pokedex.controllers.dtos.response.UpdateTrainerResponse;
 import com.example.api_pokedex.entities.Trainer;
+import com.example.api_pokedex.entities.projections.TrainerProjections;
 import com.example.api_pokedex.repositories.ITrainerRepository;
 import com.example.api_pokedex.services.interfaces.ITrainerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-
+import com.example.api_pokedex.controllers.dtos.response.TrainerResponse;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,6 +26,24 @@ public class TrainerServiceImpl implements ITrainerService {
     public GetTrainerResponse get(Long id) {
         Trainer trainer = find(id);
         return from(trainer);
+    }
+
+    @Override
+    public BaseResponse Trainer(String nameTrainer) {
+        TrainerProjections trainer = repository.Trainer(nameTrainer);
+        TrainerResponse response = new TrainerResponse();
+        response.setId(trainer.getId());
+        response.setName(trainer.getName());
+        response.setPassword(trainer.getPassword());
+        response.setCategory(trainer.getCategory());
+        response.setImage(trainer.getImage());
+        response.setAge(trainer.getAge());
+
+        return BaseResponse.builder()
+                .data(response)
+                .message("Trainer by Name of Trainer")
+                .success(Boolean.TRUE)
+                .httpStatus(HttpStatus.OK).build();
     }
 
     @Override

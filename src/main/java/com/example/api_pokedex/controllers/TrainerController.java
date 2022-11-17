@@ -34,6 +34,12 @@ public class TrainerController {
         return service.update(request, id);
     }
 
+    @GetMapping("search/{nameTrainer}")
+    public ResponseEntity<BaseResponse> Trainer(@PathVariable String nameTrainer){
+        BaseResponse baseResponse = service.Trainer(nameTrainer);
+        return new ResponseEntity<>(baseResponse,baseResponse.getHttpStatus());
+    }
+
     @GetMapping
     public List<GetTrainerResponse> list(){
         return service.list();
