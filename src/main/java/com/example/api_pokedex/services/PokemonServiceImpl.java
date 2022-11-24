@@ -2,10 +2,9 @@ package com.example.api_pokedex.services;
 
 import com.example.api_pokedex.controllers.dtos.request.CreatePokemonRequest;
 import com.example.api_pokedex.controllers.dtos.request.UpdatePokemonRequest;
-import com.example.api_pokedex.controllers.dtos.response.BaseResponse;
-import com.example.api_pokedex.controllers.dtos.response.GetPokemonResponse;
-import com.example.api_pokedex.controllers.dtos.response.UpdatePokemonResponse;
+import com.example.api_pokedex.controllers.dtos.response.*;
 import com.example.api_pokedex.entities.Pokemon;
+import com.example.api_pokedex.entities.projections.TrainerProjections;
 import com.example.api_pokedex.repositories.IPokemonRepository;
 import com.example.api_pokedex.services.interfaces.IPokemonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +65,23 @@ public class PokemonServiceImpl implements IPokemonService {
     @Override
     public Pokemon save(Pokemon pokemon) {
         return repository.save(pokemon);
+    }
+
+    @Override
+    public BaseResponse Pokemon(String namePokemon) {
+        Pokemon pokemon = repository.Pokemon(namePokemon);
+        PokemonResponse response = new PokemonResponse();
+        response.setId(pokemon.getId());
+        response.setName(pokemon.getName());
+        response.setSpecies(pokemon.getSpecies());
+        response.setType(pokemon.getType());
+        response.setImage(pokemon.getImage());
+
+        return BaseResponse.builder()
+                .data(response)
+                .message("Pokemon by Name of pokemon")
+                .success(Boolean.TRUE)
+                .httpStatus(HttpStatus.OK).build();
     }
 
     public Pokemon to(CreatePokemonRequest request) {

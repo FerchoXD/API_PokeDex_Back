@@ -33,6 +33,12 @@ public class PokemonController {
         return service.update(request, id);
     }
 
+    @GetMapping("search/{namePokemon}")
+    public ResponseEntity<BaseResponse> Pokemon(@PathVariable String namePokemon){
+        BaseResponse baseResponse = service.Pokemon(namePokemon);
+        return new ResponseEntity<>(baseResponse,baseResponse.getHttpStatus());
+    }
+
     @GetMapping
     public List<GetPokemonResponse> list(){
         return service.list();

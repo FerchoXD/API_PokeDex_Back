@@ -23,4 +23,6 @@ public interface IPokemonService {
     Pokemon FindOneAndEnsurePicture(Long id);
 
     Pokemon save(Pokemon pokemon);
+
+    BaseResponse Pokemon(String namePokemon);
 }
