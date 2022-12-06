@@ -5,12 +5,12 @@ import com.example.api_pokedex.controllers.dtos.request.UpdateTrainerRequest;
 import com.example.api_pokedex.controllers.dtos.response.BaseResponse;
 import com.example.api_pokedex.controllers.dtos.response.GetTrainerResponse;
 import com.example.api_pokedex.controllers.dtos.response.UpdateTrainerResponse;
+import com.example.api_pokedex.entities.projections.TrainerProjections;
 import com.example.api_pokedex.services.TrainerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -24,8 +24,8 @@ public class TrainerController {
     }
 
     @PostMapping
-    public ResponseEntity<BaseResponse> Create(@RequestBody @Valid CreateTrainerRequest request){
-        BaseResponse baseResponse = service.create(request);
+    public ResponseEntity<BaseResponse> Create(@RequestBody CreateTrainerRequest request, TrainerProjections projections){
+        BaseResponse baseResponse = service.create(request,projections);
         return new ResponseEntity<>(baseResponse,baseResponse.getHttpStatus());
     }
 

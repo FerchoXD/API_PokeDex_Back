@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@SpringBootApplication
+@SpringBootApplication()
 public class ApiPokeDexApplication {
 
     public static void main(String[] args) {
@@ -17,8 +17,11 @@ public class ApiPokeDexApplication {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("*");
+                registry.addMapping("/*").allowedOrigins("").allowedHeaders("").allowedMethods("");
+               
+
             }
+
         };
     }
 }

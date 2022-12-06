@@ -11,6 +11,4 @@ public class GetCommentResponse {
     private String title;
 
     private String description;
-
-    private String autor;
 }

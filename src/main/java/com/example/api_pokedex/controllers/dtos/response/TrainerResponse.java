@@ -3,8 +3,6 @@ package com.example.api_pokedex.controllers.dtos.response;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Optional;
-
 @Getter @Setter
 public class TrainerResponse {
     private Long id;
@@ -14,6 +12,8 @@ public class TrainerResponse {
     private String password;
 
     private String age;
+
+    private String email;
 
     private String category;
 

@@ -8,8 +8,6 @@ import lombok.Setter;
 public class CreateCommentResponse {
     private Long id;
 
-    private String autor;
-
     private String title;
 
     private String description;

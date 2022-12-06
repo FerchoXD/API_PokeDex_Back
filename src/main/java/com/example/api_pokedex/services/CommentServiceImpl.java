@@ -39,7 +39,6 @@ public class CommentServiceImpl implements ICommentService {
     @Override
     public UpdateCommentResponse update(UpdateCommentRequest request, Long id) {
         Comment comment = find(id);
-        comment.setAutor(request.getAutor());
         comment.setTitle(request.getTitle());
         comment.setDescription(request.getDescription());
         repository.save(comment);
@@ -58,7 +57,6 @@ public class CommentServiceImpl implements ICommentService {
 
     public Comment to(CreateCommentRequest request) {
         Comment comment = new Comment();
-        comment.setAutor(request.getAutor());
         comment.setTitle(request.getTitle());
         comment.setDescription(request.getDescription());
         return comment;
@@ -67,7 +65,6 @@ public class CommentServiceImpl implements ICommentService {
     public GetCommentResponse from(Comment comment) {
         GetCommentResponse response = new GetCommentResponse();
         response.setId(comment.getId());
-        response.setAutor(comment.getAutor());
         response.setTitle(comment.getTitle());
         response.setDescription(comment.getDescription());
         return response;
@@ -76,7 +73,6 @@ public class CommentServiceImpl implements ICommentService {
     public UpdateCommentResponse fromUpdate(Comment comment) {
         UpdateCommentResponse response = new UpdateCommentResponse();
         response.setId(comment.getId());
-        response.setAutor(comment.getAutor());
         response.setTitle(comment.getTitle());
         response.setDescription(comment.getDescription());
         return response;

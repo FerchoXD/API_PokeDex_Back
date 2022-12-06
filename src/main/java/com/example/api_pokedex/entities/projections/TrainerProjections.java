@@ -7,6 +7,8 @@ public interface TrainerProjections {
 
     String getPassword();
 
+    String getEmail();
+
     String getAge();
 
     String getCategory();

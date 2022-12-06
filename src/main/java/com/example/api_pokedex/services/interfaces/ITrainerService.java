@@ -6,6 +6,7 @@ import com.example.api_pokedex.controllers.dtos.response.BaseResponse;
 import com.example.api_pokedex.controllers.dtos.response.GetTrainerResponse;
 import com.example.api_pokedex.controllers.dtos.response.UpdateTrainerResponse;
 import com.example.api_pokedex.entities.Trainer;
+import com.example.api_pokedex.entities.projections.TrainerProjections;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public interface ITrainerService {
 
     BaseResponse Trainer(String nameTrainer);
 
-    BaseResponse create(CreateTrainerRequest request);
+    BaseResponse create(CreateTrainerRequest request,TrainerProjections projections);
 
     UpdateTrainerResponse update(UpdateTrainerRequest request, Long id);
 
@@ -25,4 +26,8 @@ public interface ITrainerService {
     Trainer FindOneAndEnsurePicture(Long id);
 
     Trainer save(Trainer trainer);
+
+    String encryptPassword(String password);
+
+    boolean verifyPassword(CreateTrainerRequest request, TrainerProjections trainer);
 }

@@ -6,28 +6,27 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
 @Table (name = "trainers")
 @Getter @Setter
 public class Trainer {
-
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @PrimaryKeyJoinColumn
     private Long id;
 
     @Column(unique=true)
-    @NotBlank
     private String name;
-    @NotBlank
+
     private String password;
-    @NotBlank
+
     private String age;
 
     private String category;
+
+    public String email;
 
     private String image;
 

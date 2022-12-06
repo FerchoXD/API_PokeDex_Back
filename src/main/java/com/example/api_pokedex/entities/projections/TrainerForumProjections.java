@@ -8,6 +8,8 @@ public interface TrainerForumProjections {
 
     String getCategory();
 
+    String getEmail();
+
     String getImage();
 
     String getForumsId();

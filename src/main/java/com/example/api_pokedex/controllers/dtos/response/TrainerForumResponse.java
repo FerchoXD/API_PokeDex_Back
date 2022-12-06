@@ -14,6 +14,7 @@ public class TrainerForumResponse {
 
     private String category;
 
+    private String email;
     private String image;
 
     private String forumsTopic;

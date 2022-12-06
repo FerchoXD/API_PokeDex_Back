@@ -61,6 +61,7 @@ public class TrainersLeagueServiceImpl implements ITrainersLeagueService {
         response.setImage(trainers.getImage());
         response.setLeaguesName(trainers.getLeaguesName());
         response.setLeaguesId(trainers.getLeaguesId());
+        response.setEmail(trainers.getEmail());
         return response;
     }
 

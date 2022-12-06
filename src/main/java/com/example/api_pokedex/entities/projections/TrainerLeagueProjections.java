@@ -7,6 +7,8 @@ public interface TrainerLeagueProjections {
 
     String getAge();
 
+    String getEmail();
+
     String getCategory();
 
     String getImage();

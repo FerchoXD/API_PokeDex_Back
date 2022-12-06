@@ -2,9 +2,11 @@ package com.example.api_pokedex.services;
 
 import com.example.api_pokedex.controllers.dtos.request.CreatePokemonRequest;
 import com.example.api_pokedex.controllers.dtos.request.UpdatePokemonRequest;
-import com.example.api_pokedex.controllers.dtos.response.*;
+import com.example.api_pokedex.controllers.dtos.response.BaseResponse;
+import com.example.api_pokedex.controllers.dtos.response.GetPokemonResponse;
+import com.example.api_pokedex.controllers.dtos.response.PokemonResponse;
+import com.example.api_pokedex.controllers.dtos.response.UpdatePokemonResponse;
 import com.example.api_pokedex.entities.Pokemon;
-import com.example.api_pokedex.entities.projections.TrainerProjections;
 import com.example.api_pokedex.repositories.IPokemonRepository;
 import com.example.api_pokedex.services.interfaces.IPokemonService;
 import org.springframework.beans.factory.annotation.Autowired;

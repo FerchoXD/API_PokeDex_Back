@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
@@ -18,16 +17,12 @@ public class Pokemon {
     private Long id;
 
     @Column(unique=true)
-    @NotBlank
     private String name;
 
-    @NotBlank
     private String species;
 
-    @NotBlank
     private String type;
 
-    @NotBlank
     private String image;
 
     @OneToOne(mappedBy = "pokemon")

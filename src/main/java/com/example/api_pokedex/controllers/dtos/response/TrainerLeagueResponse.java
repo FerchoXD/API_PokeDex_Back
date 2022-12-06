@@ -14,6 +14,8 @@ public class TrainerLeagueResponse {
 
     private String category;
 
+    private String email;
+
     private String image;
 
     private String leaguesName;

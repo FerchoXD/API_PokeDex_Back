@@ -36,6 +36,7 @@ public class TrainersForumServiceImpl implements ITrainersForumService {
         response.setImage(trainers.getImage());
         response.setForumsId(trainers.getForumsId());
         response.setForumsTopic(trainers.getForumsTopic());
+        response.setEmail(trainers.getEmail());
         return response;
     }
 }

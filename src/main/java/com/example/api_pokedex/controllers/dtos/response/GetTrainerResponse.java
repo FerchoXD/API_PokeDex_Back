@@ -12,6 +12,8 @@ public class GetTrainerResponse {
 
     private String age;
 
+    private String email;
+
     private String category;
 
     private String image;

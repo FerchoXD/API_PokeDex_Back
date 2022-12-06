@@ -11,5 +11,4 @@ public class UpdateCommentRequest {
 
     private String description;
 
-    private String autor;
 }
