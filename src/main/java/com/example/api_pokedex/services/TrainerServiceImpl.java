@@ -43,7 +43,6 @@ public class TrainerServiceImpl implements ITrainerService {
         trainer.setPassword(encryptPassword(request.getPassword()));
         trainer.setAge(request.getAge());
         trainer.setImage(request.getImage());
-        trainer.setCategory(request.getCategory());
         trainer.setEmail(request.getEmail());
         return BaseResponse.builder()
                 .data(from(repository.save(trainer)))
@@ -82,7 +81,6 @@ public class TrainerServiceImpl implements ITrainerService {
         response.setName(trainer.getName());
         System.out.println("los datos son " + trainer.getName());
         response.setPassword(trainer.getPassword());
-        response.setCategory(trainer.getCategory());
         response.setImage(trainer.getImage());
         response.setAge(trainer.getAge());
         response.setEmail(trainer.getEmail());
@@ -104,7 +102,6 @@ public class TrainerServiceImpl implements ITrainerService {
         trainer.setName(request.getName());
         trainer.setPassword(request.getPassword());
         trainer.setAge(request.getAge());
-        trainer.setCategory(request.getCategory());
         trainer.setImage(request.getImage());
         trainer.setEmail(request.getEmail());
         repository.save(trainer);
@@ -141,7 +138,6 @@ public class TrainerServiceImpl implements ITrainerService {
         trainer.setPassword(request.getPassword() );
         trainer.setAge(request.getAge());
         trainer.setImage(request.getImage());
-        trainer.setCategory(request.getCategory());
         trainer.setEmail(request.getEmail());
         return trainer;
     }
@@ -151,7 +147,6 @@ public class TrainerServiceImpl implements ITrainerService {
         response.setId(trainer.getId());
         response.setName(trainer.getName());
         response.setPassword(trainer.getPassword());
-        response.setCategory(trainer.getCategory());
         response.setImage(trainer.getImage());
         response.setAge(trainer.getAge());
         response.setEmail(trainer.getEmail());
@@ -163,7 +158,6 @@ public class TrainerServiceImpl implements ITrainerService {
         response.setId(trainer.getId());
         response.setName(trainer.getName());
         response.setPassword(trainer.getPassword());
-        response.setCategory(trainer.getCategory());
         response.setImage(trainer.getImage());
         response.setAge(trainer.getAge());
         response.setEmail(trainer.getEmail());

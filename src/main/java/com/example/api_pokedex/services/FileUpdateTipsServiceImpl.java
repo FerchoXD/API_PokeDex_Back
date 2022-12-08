@@ -28,11 +28,11 @@ public class FileUpdateTipsServiceImpl implements IFileUpdateTipsService {
 
     private String ENDPOINT_URL = "s3.us-east-2.amazonaws.com";
 
-    private String BUCKET_NAME = "bucket-pokedex";
+    private String BUCKET_NAME = "pokes";
 
-    private String ACCESS_KEY = "AKIA2KYSLO7KIXRKU37Q";
+    private String ACCESS_KEY = "AKIA2KYSLO7KM44GRD2T";
 
-    private String SECRET_KEY = "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";
+    private String SECRET_KEY = "bhVl5rTRd2uI8Om+XwVqcVN1EKvQJhTncEVq5VRR";
 
 
     public String upload(MultipartFile multipartFile, Long idTips) {

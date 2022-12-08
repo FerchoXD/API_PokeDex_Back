@@ -24,8 +24,6 @@ public class Trainer {
 
     private String age;
 
-    private String category;
-
     public String email;
 
     private String image;
